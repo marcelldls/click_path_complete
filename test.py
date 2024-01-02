@@ -5,7 +5,7 @@ def cli():
     pass
 
 @click.command()
-@click.argument('name', type=click.Path(exists=True))
+@click.argument('name', type=click.Path())
 def echo_path(name):
     click.echo(f"Path: {name}")
 
