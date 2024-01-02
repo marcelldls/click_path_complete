@@ -1,5 +1,3 @@
-from pathlib import Path
-
 import click
 
 @click.group()
@@ -7,13 +5,13 @@ def cli():
     pass
 
 @click.command()
-@click.argument('name')
-def echo_path(name: Path):
+@click.argument('name', type=click.Path(exists=True))
+def echo_path(name):
     click.echo(f"Path: {name}")
 
 @click.command()
 @click.argument('name')
-def echo_str(name: str):
+def echo_str(name):
     click.echo(f"String: {name}")
 
 
